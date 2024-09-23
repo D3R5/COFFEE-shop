@@ -69,6 +69,7 @@
 
 input,
 textarea,
+button,
 body {
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
@@ -120,7 +121,7 @@ img {
 
 .grid {
   display: grid;
-  gap: 1.5rem
+  gap: 1.5rem;
 }
 
 .btn {
@@ -135,6 +136,12 @@ img {
 .btn:hover {
   background: transparent;
   color: var(--first-color);
+}
+
+.btn-flex {
+  display: flex;
+  align-items: center;
+  column-gap: 0.25rem;
 }
 
 .section {
