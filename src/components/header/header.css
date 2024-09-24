@@ -36,3 +36,23 @@
   font-size: var(--h2-font-size);
   display: none;
 }
+
+/*===============
+   * Hover Effect 
+  ===============*/
+
+.scroll-header {
+  position: fixed;
+  background-color: var(--container-color);
+  animation: slide-down 0.7s;
+}
+
+@keyframes slide-down {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
