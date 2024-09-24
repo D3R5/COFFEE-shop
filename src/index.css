@@ -48,6 +48,11 @@
     background-color: var(--title-color);
     max-height: 0;
     overflow: scroll;
+    transition: 0.3s var(--transition);
+  }
+
+  .show__menu {
+    max-height: 220px;
   }
 
   .nav__list {
