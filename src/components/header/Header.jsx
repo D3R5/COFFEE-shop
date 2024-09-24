@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import logo from "../../assets/logo.png";
 import { links } from "../../Data";
+import { Link, animateScroll } from "react-scroll";
 import { FaStream } from "react-icons/fa";
-import "./header.css"
+import "./header.css";
 
 const Header = () => {
   const [scrollHeader, setScrollHeader] = useState(false);
@@ -15,6 +16,10 @@ const Header = () => {
     }
   };
 
+  const scrollTop = () => {
+    animateScroll.scrollToTop();
+  };
+
   useEffect(() => {
     window.addEventListener("scroll", changeHeader);
     return () => {
@@ -23,19 +28,27 @@ const Header = () => {
   }, []);
 
   return (
-    <header className={`${scrollHeader ? 'scroll-header' : ''} header`}>
+    <header className={`${scrollHeader ? "scroll-header" : ""} header`}>
       <nav className="nav container">
-        <a href="/" className="nav__logo">
+        <Link to="/" onClick={scrollTop} className="nav__logo">
           <img src={logo} alt="" className="nav__logo-img" />
-        </a>
+        </Link>
         <div className="nav__menu">
           <ul className="nav__list">
             {links.map(({ name, path }, index) => {
               return (
                 <li className="nav__item" key={index}>
-                  <a href={path} className="nav__link">
+                  <Link
+                    spy={true}
+                    smooth={true}
+                    offset={-60}
+                    hashSpy={true}
+                    duration={500}
+                    to={path}
+                    className="nav__link"
+                  >
                     {name}
-                  </a>
+                  </Link>
                 </li>
               );
             })}

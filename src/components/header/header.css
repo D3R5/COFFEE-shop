@@ -15,6 +15,7 @@
 
 .nav__logo-img {
   width: 190px;
+  cursor: pointer;
 }
 
 .nav__list {
@@ -25,6 +26,7 @@
 .nav__link,
 .nav__toggle {
   color: var(--title-color);
+  cursor: pointer;
 }
 
 .nav__link {
@@ -55,4 +57,13 @@
   100% {
     transform: translateY(0);
   }
+}
+
+/*===============
+   * Active Effect 
+  ===============*/
+
+.active,
+.nav__link:hover {
+  color: var(--first-color);
 }
