@@ -51,8 +51,9 @@
     transition: 0.3s var(--transition);
   }
 
-  .show__menu {
+  .show-menu {
     max-height: 220px;
+    background-color: rgb(226, 221, 211);
   }
 
   .nav__list {
